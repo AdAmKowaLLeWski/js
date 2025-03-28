@@ -1,0 +1,31 @@
+<A HREF="index.html"> Wróć </A></br>
+<html>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 36 - Parzysta czy nieparzysta</title>
+</head>
+<body>
+    <h1>Zadanie 36 - Sprawdzenie, czy liczba jest parzysta czy nieparzysta</h1>
+    <button onclick="sprawdzLiczbe()">Kowalewski-Zadanie36</button>
+
+    <div id="result"></div>
+
+    <script>
+        function sprawdzLiczbe() {
+            var x = prompt("Podaj liczbę x=", "");
+            var liczba = parseInt(x);
+            
+            if (liczba % 2 === 0) {
+                // Liczba parzysta
+                document.write("<font color='red' size='3'>Liczba jest parzysta</font>");
+            } else {
+                // Liczba nieparzysta
+                document.write("<font color='silver' size='5'>Liczba jest nieparzysta</font>");
+            }
+        }
+    </script>
+</body>
+</html>

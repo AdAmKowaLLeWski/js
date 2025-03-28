@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            
+
+
+            function AB()
+            {
+
+                var a =
+            {
+                x:parseFloat(document.getElementById("ax").value),
+                y:parseFloat(document.getElementById("ay").value)
+            }
+
+            var b = 
+            {
+                x:parseFloat(document.getElementById("bx").value),
+                y:parseFloat(document.getElementById("by").value)
+            }
+
+            var c = 
+            {
+                x:parseFloat(document.getElementById("cx").value),
+                y:parseFloat(document.getElementById("cy").value)
+            }
+
+
+            if(a.x<b.x){
+                
+                if(a.y<b.y){
+                    document.getElementById("nazwa").innerHTML="AB = "+Math.sqrt((b.x-a.x)*(b.x-a.x)+(b.y-a.y)*(b.y-a.y));
+                }
+
+                else if(a.y>b.y)
+                {
+                    document.getElementById("nazwa").innerHTML="AB = "+Math.sqrt((b.x-a.x)*(b.x-a.x)+(a.y-b.y)*(a.y-b.y));
+                }
+            }
+
+            if(b.x<a.x){
+                if(a.y<b.y){
+                    document.getElementById("nazwa").innerHTML="AB= "+Math.sqrt((a.x-b.x)*(a.x-b.x)+(b.y-a.y)*(b.y-a.y));
+                }
+
+                else if(a.y>b.y)
+                {
+                    document.getElementById("nazwa").innerHTML="AB = "+Math.sqrt((a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y));
+                }
+            }
+
+            }
+            function BC()
+            {
+
+            
+                var a =
+            {
+                x:parseFloat(document.getElementById("ax").value),
+                y:parseFloat(document.getElementById("ay").value)
+            }
+
+            var b = 
+            {
+                x:parseFloat(document.getElementById("bx").value),
+                y:parseFloat(document.getElementById("by").value)
+            }
+
+            var c = 
+            {
+                x:parseFloat(document.getElementById("cx").value),
+                y:parseFloat(document.getElementById("cy").value)
+            }
+
+
+
+                if(c.x<b.x){
+                
+                if(c.y<b.y){
+                    document.getElementById("nazwa").innerHTML="BC = "+Math.sqrt((b.x-c.x)*(b.x-c.x)+(b.y-c.y)*(b.y-c.y));
+                }
+
+                else if(c.y>b.y)
+                {
+                    document.getElementById("nazwa").innerHTML="BC = "+Math.sqrt((b.x-c.x)*(b.x-c.x)+(c.y-b.y)*(c.y-b.y));
+                }
+            }
+
+            if(b.x<c.x){
+                if(c.y<b.y){
+                    document.getElementById("nazwa").innerHTML="BC = "+Math.sqrt((c.x-b.x)*(c.x-b.x)+(b.y-c.y)*(b.y-c.y));
+                }
+
+                else if(c.y>b.y)
+                {
+                    document.getElementById("nazwa").innerHTML="BC = "+Math.sqrt((c.x-b.x)*(c.x-b.x)+(c.y-b.y)*(c.y-b.y));
+                }
+            }
+            }
+
+            function AC()
+            {
+
+
+                var a =
+            {
+                x:parseFloat(document.getElementById("ax").value),
+                y:parseFloat(document.getElementById("ay").value)
+            }
+
+            var b = 
+            {
+                x:parseFloat(document.getElementById("bx").value),
+                y:parseFloat(document.getElementById("by").value)
+            }
+
+            var c = 
+            {
+                x:parseFloat(document.getElementById("cx").value),
+                y:parseFloat(document.getElementById("cy").value)
+            }
+
+
+
+                if(c.x<a.x){
+                
+                if(c.y<a.y){
+                    document.getElementById("nazwa").innerHTML="AC = "+Math.sqrt((a.x-c.x)*(a.x-c.x)+(a.y-c.y)*(a.y-c.y));
+                }
+
+                else if(c.y>a.y)
+                {
+                    document.getElementById("nazwa").innerHTML="AC = "+Math.sqrt((a.x-c.x)*(a.x-c.x)+(c.y-a.y)*(c.y-a.y))
+                }
+            }
+
+            if(a.x<c.x){
+                if(c.y<a.y){
+                    document.getElementById("nazwa").innerHTML="AC = "+Math.sqrt((c.x-a.x)*(c.x-a.x)+(a.y-c.y)*(a.y-c.y));
+                }
+
+                else if(c.y>b.y)
+                {
+                    document.getElementById("nazwa").innerHTML="AC = "+Math.sqrt(( c.x-a.x)*(c.x-a.x)+(c.y-a.y)*(c.y-a.y))
+                }
+            }
+            }
+            </script>
+
+            podaj ax<input type="text" value="ax" id="ax"><br>
+            podaj ay<input type="text" value="ay" id="ay"><br>
+            podaj bx<input type="text" value="bx" id="bx"><br>
+            podaj by<input type="text" value="by" id="by"><br>
+            podaj cx<input type="text" value="cx" id="cx"><br>
+            podaj cy<input type="text" value="cy" id="cy"><br>
+            <input type="button" onclick="AB()" value="AB">
+            <input type="button" onclick="BC()" value="BC">
+            <input type="button" onclick="AC()" value="AC">
+            <div id="nazwa" style="color:red;"></div>
+    </body>
+</html>

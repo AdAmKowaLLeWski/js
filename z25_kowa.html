@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obliczenia rozpadu promieniotwórczego</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            padding: 20px;
+        }
+        .output {
+            font-size: 18px;
+            color: #2e6e91;
+            margin-bottom: 15px;
+        }
+        .highlight {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .input-label {
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Obliczenia rozpadu promieniotwórczego</h2>
+
+    <script>
+        // Wczytywanie danych z prompt
+        let No = parseFloat(prompt("Podaj początkową ilość atomów N0:"));
+        let t = parseFloat(prompt("Podaj czas t (w latach):"));
+        let T_half = parseFloat(prompt("Podaj okres połowicznego zaniku T1/2 (w latach):"));
+
+        // Stała logarytmiczna
+        const ln2 = Math.LN2; // ln(2)
+
+        // Obliczanie stałej rozpadu promieniotwórczego λ
+        let lambda = ln2 / T_half;
+
+        // Obliczanie liczby atomów po czasie t
+        let N = No * Math.pow(Math.E, -lambda * t); // N = N0 * e^(-λt)
+
+        // Wyświetlenie wczytanych danych oraz wyników
+        document.write("<div class='output'>");
+        document.write("<span class='highlight'>Wczytane dane:</span><br>");
+        document.write("Początkowa ilość atomów N0 = " + No + " sztuk<br>");
+        document.write("Czas t = " + t + " lat<br>");
+        document.write("Okres połowicznego zaniku T1/2 = " + T_half + " lat<br><br>");
+
+        // Formatowanie i wyświetlenie wyników
+        document.write("<span class='highlight'>Obliczone wartości:</span><br>");
+        document.write("Stała rozpadu λ = " + lambda.toFixed(7) + " 1/rok<br>");
+        document.write("Liczba atomów po czasie t = " + N.toFixed(2) + " sztuk<br>");
+        document.write("</div>");
+    </script>
+
+
+</body>
+</html>

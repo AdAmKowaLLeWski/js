@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script type="text/javascript">
+ function okno_zamknij_siejka()
+ {
+ window.close()
+ }
+ </script>
+</head>
+<body>
+ <form>
+ <textarea name="siejka" cols="80" rows="30" readonly>
+<!DOCTYPE html>|
+ <html>
+<head>
+</head>
+<body>
+<script>
+var m = prompt("podaj m");
+m = parseFloat(m);
+var mian1 = m+1;
+var mian2 = m*(m+1);
+document.write("1 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 1<br>");
+document.write("___&nbsp&nbsp&nbsp&nbsp=&nbsp&nbsp ___ &nbsp&nbsp&nbsp&nbsp+&nbsp&nbsp ___<br>");
+document.write("&nbsp"+m+" &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + mian1 + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + mian2);
+</script>             
+ </body>
+ </html>
+ </textarea>
+</form>
+<input type="button" value="zamknij okno" onclick="okno_zamknij_siejka()"/>
+<script type="text/javascript">
+</script>
+</body>
+</html>

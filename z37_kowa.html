@@ -1,0 +1,36 @@
+<A HREF="index.html"> Wróć </A></br>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 37 - Sprawdzanie roku użycia Javascript</title>
+</head>
+<body>
+    <h1>Zadanie 37 - Sprawdzenie, czy znasz rok, od kiedy działa Javascript</h1>
+    <button onclick="sprawdzRok()">Kowalewski-Zadanie37</button>
+
+    <div id="result"></div>
+
+    <script>
+        function sprawdzRok() {
+            var rok_cel = prompt("Podaj rok, od kiedy Javascript jest w użyciu:", "");
+            rok_cel = parseInt(rok_cel); // Konwertujemy na liczbę
+            
+            var resultText = ""; // Tekst, który zostanie wyświetlony
+            
+            if (rok_cel === 1995) {
+                resultText = "<font color='blue' size='4'>Brawo, znasz rok, od kiedy działa Javascript!</font>";
+            } else {
+                resultText = "<font color='red' size='7'>Źle, musisz jeszcze poczytać!</font>";
+            }
+
+            // Wyświetlamy wczytany rok oraz wynik
+            resultText += "<br>Wczytany rok: " + rok_cel;
+            
+            // Wstawiamy wynik do div#result
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>

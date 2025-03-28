@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            
+            function Pole_kowalewski()
+            {
+                var a_kowa = parseFloat(document.getElementById("a").value);
+                var  b_kowa= parseFloat(document.getElementById("b").value);
+                document.getElementById("nazwa").innerHTML="pole = "+(a_kowa*b_kowa);
+            }
+            function Obw_kowalewski()
+            {   
+                var a_kowa = parseFloat(document.getElementById("a").value);
+                var  b_kowa= parseFloat(document.getElementById("b").value);
+                document.getElementById("nazwa").innerHTML="pole = "+(a_kowa+b_kowa+a_kowa+b_kowa);
+                
+            }
+        </script>
+        podaj a <input type="text" value="a" id="a"><br>
+        podaj b <input type="text" value="b" id="b"><br>
+        <input type="button" value="pole" onclick="Pole_kowalewski()">
+        <input type="button" value="obwod" onclick="Obw_kowalewski()">
+        <div id="nazwa" style="color:red;"></div>
+    </body>
+</html>

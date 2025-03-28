@@ -1,0 +1,53 @@
+<A HREF="index.html"> Wróć </A></br>
+<html>
+<head>
+<script type="text/javascript">
+    // Tworzymy obiekt pudełko
+    var pudełko = {
+        kolor: 'czerwony',
+        rozmiar: 'małe',
+        material: 'karton',
+        pudelko_wyswietl_Kowalewski: function () {
+            document.write("Nazwa obiektu: Pudełko<br>");
+            document.write("Pola:<br>");
+            document.write("Kolor: " + this.kolor + "<br>");
+            document.write("Rozmiar: " + this.rozmiar + "<br>");
+            document.write("Materiał: " + this.material + "<br>");
+            document.write("Metoda: pudelko_wyswietl_Celmer<br>");
+        }
+    };
+
+    // Wywołanie metody wewnętrznej obiektu
+    pudełko.pudelko_wyswietl_Kowalewski();
+
+    // Dodajemy nową właściwość do obiektu pudełko
+    pudełko.waga = '1 kg';
+
+    // Dodajemy nową metodę do obiektu pudełko
+    pudełko.pudelko_wyswietl_wage = function() {
+        document.write("<br>Nowa metoda: pudelko_wyswietl_wage<br>");
+        document.write("Nowe pole: Waga: " + this.waga + "<br>");
+    };
+
+    // Wywołanie nowej metody
+    pudełko.pudelko_wyswietl_wage();
+</script>
+
+<!-- Tworzymy przyciski do wywołania kodu -->
+<button onclick="pudełko.pudelko_wyswietl_Kowalewski()">Wyświetl dane pudełka</button>
+<button onclick="pudełko.pudelko_wyswietl_wage()">Wyświetl wagę pudełka</button>
+
+</head>
+<body>
+<br>
+Programowanie obiektowe. <br>
+Obiekt to Pudełko<br>
+Pola:<br>
+Kolor<br>
+Rozmiar<br>
+Materiał<br>
+Metoda: pudelko_wyswietl_Celmer<br>
+Nowe pole to waga<br>
+Nowa metoda to pudelko_wyswietl_wage<br>
+</body>
+</html>

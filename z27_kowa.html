@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obliczenia wysokości i kąta startu samolotu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            padding: 20px;
+        }
+        .output {
+            font-size: 18px;
+            color: #2e6e91;
+            margin-bottom: 15px;
+        }
+        .highlight {
+            font-size: 20px;
+            font-weight: bold;
+            color: #466ff6;
+        }
+        .input-label {
+            font-size: 16px;
+            color: #a44eb5;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+      
+        function obliczWysokosc(s_kow, kat_kow) {
+            return s_kow * Math.sin(kat_kow);
+        }
+
+       
+        function obliczKat(h_kow, odl_kow) {
+            return Math.atan(h_kow / odl_kow);
+        }
+
+      
+        let odl_kow = parseFloat(prompt("Podaj odległość między Arturem a Dawidem (odl_kow):"));
+        let kat_kow = parseFloat(prompt("Podaj kąt startu samolotu w radianach (kat_kow):"));
+        let s_kow = parseFloat(prompt("Podaj przebywaną drogę przez samolot (s_kow):"));
+
+    
+        let h_kow = obliczWysokosc(s_kow, kat_kow);
+
+      
+        let kat_wynik = obliczKat(h_kow, odl_kow);
+
+     
+        document.write("<div class='output'>");
+        document.write("<span class='highlight'>Wczytane dane:</span><br>");
+        document.write("Odległość między Arturem a Dawidem (odl_kow) = " + odl_kow + " jednostek<br>");
+        document.write("Kąt startu samolotu (kat_kow) = " + kat_kow + " radianów<br>");
+        document.write("Przebyta droga przez samolot (s_kow) = " + s_kow + " jednostek<br><br>");
+
+        
+        document.write("<span class='highlight'>Obliczone wartości:</span><br>");
+        document.write("Wysokość samolotu (h_kow) = " + h_kow.toFixed(2) + " jednostek<br>");
+        document.write("Kąt startu samolotu (kat_kow) = " + (kat_wynik * 180 / Math.PI).toFixed(2) + " stopni<br>");
+        document.write("</div>");
+    </script>
+</body>
+</html>

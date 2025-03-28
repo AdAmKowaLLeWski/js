@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<head> 
+
+<title> Użycie fukcji </title> 
+
+<meta charset="utf-8"> 
+
+</head> 
+
+<body>
+
+<div style="color:navy;font-size:50px;">
+
+<script language="JavaScript">
+
+var a=parseFloat(prompt("a=",""));
+var b=parseFloat(prompt("b=",""));
+function suma_kowa(a, b) {
+return a + b;
+}
+function odejmowanie_kowa(a,b)
+{
+    return a-b;
+}
+function mnozenie_kowa(a,b)
+{
+    return a*b;
+} 
+function od_kwadratu_kowa()
+{
+    document.write("<br>b:"+a*a);
+    document.write("<br>a:"+b*b);
+    
+}
+
+document.write("suma="+suma_kowa(a,b)+"<br><br>");
+document.write("wynik odejmowania="+odejmowanie_kowa(a,b)+"<br><br>");
+document.write("wynik mnozenia="+mnozenie_kowa(a,b)+"<br><br>");
+document.write("do kwadratu=<br>");
+od_kwadratu_kowa();
+
+</script>
+</div> 
+</body>
+</html>

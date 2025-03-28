@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obliczenia z użyciem Math</title>
+</head>
+<body>
+
+    <script>
+        
+        let x1_kow = parseFloat(prompt("Podaj wartość x1:"));
+        let x2_kow = parseFloat(prompt("Podaj wartość x2:"));
+
+  
+        document.write("Wczytane liczby:<br>");
+        document.write("x1=" + x1_kow + "     x2=" + x2_kow + "<br><br>");
+
+       
+        let y1 = x1_kow ** 2;  
+        let y2 = x1_kow * x2_kow;
+        let y3 = x1_kow / x2_kow;  
+
+       
+        document.write("Wyniki obliczeń:<br>");
+        document.write("y1=" + y1.toFixed(2) + "<br>");
+        document.write("y2=" + y2.toFixed(2) + "<br>");
+        document.write("y3=" + y3.toFixed(2) + "<br><br>");
+
+      
+        let x1_radians = (x1_kow * Math.PI) / 180;
+
+        
+        document.write("x1 w stopniach: " + x1_kow + " [stopniach]<br>");
+        document.write("x1 w radianach: " + x1_radians.toFixed(2) + " [radianach]<br>");
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<A HREF="index.html"> Wróć </A></br>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programowanie obiektowe - Logowanie</title>
+    <script type="text/javascript">
+        // Konstruktor User
+        function User(email, password, avatarUrl) {
+            this.email = email;
+            this.password = password;
+            this.avatarUrl = avatarUrl;
+        }
+
+        // Konstruktor UserList
+        function UserList() {
+            this.users = [];
+        }
+
+        // Metoda do dodawania użytkowników
+        UserList.prototype.addUser = function(user) {
+            this.users.push(user);
+        };
+
+        // Metoda logowania
+        UserList.prototype.login = function(email, password) {
+            for (let user of this.users) {
+                if (user.email === email && user.password === password) {
+                    return true; // Użytkownik zalogowany
+                }
+            }
+            return false; // Błędne dane logowania
+        };
+
+        // Tworzenie instancji UserList
+        var userList = new UserList();
+
+        // Dodanie przykładowych użytkowników
+        var user1 = new User("jan.kowalski@example.com", "1234", "avatar1.png");
+        var user2 = new User("anna.nowak@example.com", "abcd", "avatar2.png");
+        userList.addUser(user1);
+        userList.addUser(user2);
+
+        // Funkcja obsługująca logowanie
+        function loginUser() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            
+            // Sprawdzanie danych logowania
+            if (userList.login(email, password)) {
+                alert("Zalogowano pomyślnie!");
+            } else {
+                alert("Błędny email lub hasło.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Logowanie</h1>
+    
+    <!-- Formularz logowania -->
+    <form onsubmit="event.preventDefault(); loginUser();">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br><br>
+        
+        <label for="password">Hasło:</label>
+        <input type="password" id="password" required><br><br>
+        
+        <button type="submit">Zaloguj się</button>
+    </form>
+</body>
+</html>

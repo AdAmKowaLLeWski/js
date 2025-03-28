@@ -1,0 +1,42 @@
+<A HREF="index.html"> Wróć </A></br>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 35 - Określenie znaku liczby</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .result {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Zadanie 35 - Określenie znaku liczby</h1>
+    <button onclick="okreslZnak()">Kowalewski-Zadanie35</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function okreslZnak() {
+            var x = prompt("Podaj liczbę x=", "");
+            var a_dana_kow= parseFloat(x);
+            document.getElementById("result").innerHTML = "Czytana liczba: " + a_dana_kow + "<br>";
+
+            if (a_dana_cel > 0) {
+                document.getElementById("result").innerHTML += "Czytana liczba jest większa od 0";
+            } else if (a_dana_kow === 0) {
+                document.getElementById("result").innerHTML += "Czytana liczba jest równa 0";
+            } else {
+                document.getElementById("result").innerHTML += "Czytana liczba jest mniejsza od 0";
+            }
+        }
+    </script>
+</body>
+</html>

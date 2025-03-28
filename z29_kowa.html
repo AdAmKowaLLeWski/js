@@ -1,0 +1,92 @@
+<A HREF="zad 4.html"> Wróć </A></br>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoria Programowania</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h1 { font-size: 32px; }
+        h2 { font-size: 28px; }
+        h3 { font-size: 24px; }
+        p { font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>Pytania teoretyczne z programowania</h1>
+    
+    <h1>1. W jaki sposób można określić właściwość danego obiektu?</h1>
+    <p>Właściwość danego obiektu można określić na dwa sposoby:</p>
+    <p><strong>Sposób 1:</strong> Używając zapisu postaci <code>nazwa_obiektu.nazwa_właściwości = wartość;</code></p>
+    <p>Przykłady:<br>
+        <code>auto.marka = "Opel Omega";</code><br>
+        <code>auto.rok = 1996;</code>
+    </p>
+    <p><strong>Sposób 2:</strong> Używając zapisu tablicowego <code>nazwa_obiektu["nazwa_właściwości"] = wartość;</code></p>
+    <p>Przykład:<br>
+        <code>auto["cena"] = 25000;</code>
+    </p>
+    
+    <h1>2. W jaki sposób można odwołać się do pól (właściwości) i metod?</h1>
+    <p>Do właściwości i metod można odwołać się używając notacji kropkowej lub tablicowej.</p>
+    <p>Przykład:<br>
+        <code>console.log(samochod1.kolor);</code> (wyświetla kolor obiektu samochod1)</p>
+    
+    <h1>3. Wymień cechy charakterystyczne konstruktora.</h1>
+    <p>- Jest wywoływany automatycznie przy tworzeniu obiektu.<br>
+       - Nosi taką samą nazwę jak klasa.<br>
+       - Nie zwraca żadnej wartości.<br>
+       - Może przyjmować argumenty.</p>
+    
+    <h1>4. Konstruowanie obiektu na podstawie przykładu</h1>
+    <p>Obiekt z trzema polami i jedną metodą:</p>
+    <pre>
+var osoba_1 = {
+    nazwisko: "Celmer",
+    imie: "Łukasz",
+    zawod: "piekarz",
+    wyswietl: function () {
+        document.write(this.nazwisko + " " + this.imie);
+    }
+};
+    </pre>
+    
+    <h1>5. Znaczenie słowa this. Jak oddzielamy pola oraz metody?</h1>
+    <p><strong>this</strong> odnosi się do bieżącego obiektu. Pozwala na odwołanie się do pól i metod obiektu.</p>
+    <p>Pola i metody w obiekcie oddzielamy przecinkami.</p>
+    
+    <h1>6. Konstruktor w JS na podstawie przykładu wraz z opisem.</h1>
+    <pre>
+function Klient(nazwisko, imie, zawod) {
+    this.nazwisko = nazwisko;
+    this.imie = imie;
+    this.zawod = zawod;
+    this.wypisz = function () {
+        alert(this.nazwisko + ' ' + this.imie);
+    };
+}
+    </pre>
+    
+    <h1>7. Znaczenie słowa kluczowego new wraz z przykładem.</h1>
+    <p>Słowo kluczowe <strong>new</strong> służy do tworzenia nowych obiektów.</p>
+    <p>Przykład:<br>
+    <code>var osoba1 = new Klient('Kowalski', 'Jan', 'kierowca');</code></p>
+    
+    <h1>8. Znaczenie słowa kluczowego prototype wraz z przykładem i opisem.</h1>
+    <p><strong>prototype</strong> pozwala dodawać nowe metody i właściwości do istniejących obiektów.</p>
+    <pre>
+function Klient() {
+    this.nazwisko = "Celmer";
+    this.imie = "Łukasz";
+}
+Klient.prototype.pisz_dane = function () {
+    document.write(this.nazwisko + ' ' + this.imie);
+};
+Klient.prototype.zawod = 'kierowca';
+var osoba1 = new Klient();
+osoba1.pisz_dane();
+    </pre>
+    <p>Teraz każdy nowy obiekt utworzony na podstawie Klient będzie miał dodatkowe właściwości i metody.</p>
+</body>
+</html>

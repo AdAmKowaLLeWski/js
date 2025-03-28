@@ -1,0 +1,80 @@
+<A HREF="index.html"> Wróć </A></br>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 38 - Przedziały liczbowe</title>
+</head>
+<body style="background-color:silver;">
+    <h1>Witaj w zadaniu 38</h1>
+    <button onclick="sprawdzOpcje()">Kowalewski-Zadanie38</button>
+    <div id="result"></div>
+
+    <script>
+        function sprawdzOpcje() {
+            // Przykładowe imię i nazwisko
+            var imie = "Adam";
+            var nazwisko = "Kowalewski";
+            var dzienUrodzenia = 18; // Przykładowy dzień urodzenia
+
+            // Obliczanie liczba1, liczba2, liczba3, liczba4
+            var liczba1 = imie.length;
+            var liczba2 = liczba1 + 7;
+            var liczba3 = nazwisko.length;
+            var liczba4 = liczba3 + 4;
+
+            // Wyświetlenie danych
+            var dzien = 15; // Przykład numeru dziennika
+            var rozmiarCzcionki = 40 + (dzien % 7); // Wielkość czcionki
+            var kolor = "green";
+            var wynik = `<p style="color:${kolor}; font-size:${rozmiarCzcionki}px;">${imie} ${nazwisko}</p>`;
+            wynik += `<p>liczba1 = ${liczba1}</p>`;
+            wynik += `<p>liczba2 = ${liczba2}</p>`;
+            wynik += `<p>liczba3 = ${liczba3}</p>`;
+            wynik += `<p>liczba4 = ${liczba4}</p>`;
+
+            // Wyświetlenie opcji menu
+            wynik += `<p>Wybierz opcję:</p>`;
+            wynik += `<p>1) Teoria operatorów logicznych</p>`;
+            wynik += `<p>2) Sprawdzanie przedziału liczba1 + 20</p>`;
+            wynik += `<p>3) Sprawdzanie przedziału urodzenia + 50</p>`;
+
+            document.getElementById("result").innerHTML = wynik;
+
+            // Wczytanie opcji
+            var opcja = prompt("Podaj numer opcji (np. 1, 2, 3):");
+
+            // Oprogramowanie opcji
+            if (opcja == 1) {
+                document.write("<font color=blue size=7>Teoria operatorów logicznych</font>");
+            }
+            else if (opcja == 2) {
+                var liczba2_cel = prompt("Podaj liczbę do sprawdzenia: ");
+                liczba2_cel = parseInt(liczba2_kow);
+
+                // Sprawdzanie przedziału (liczba1 + 20) < x < liczba4
+                if ((liczba2_cel >= (liczba1 + 20)) && (liczba2_cel <= liczba4)) {
+                    document.write("<font color=green size=7>Liczba należy do przedziału</font>");
+                } else {
+                    document.write("<font color=red size=7>Liczba nie należy do przedziału</font>");
+                }
+            }
+            else if (opcja == 3) {
+                var liczba3_cel = prompt("Podaj liczbę do sprawdzenia: ");
+                liczba3_cel = parseInt(liczba3_cel);
+
+                // Sprawdzanie przedziału (-oo liczba1) lub [liczba2 +oo)
+                if (liczba3_cel <= liczba1 || liczba3_kow >= liczba2) {
+                    document.write("<font color=blue size=7>Liczba należy do przedziału</font>");
+                } else {
+                    document.write("<font color=red size=7>Liczba nie należy do przedziału</font>");
+                }
+            }
+            else {
+                document.write("<font color=red size=7>Nie ma takiej opcji</font>");
+            }
+        }
+    </script>
+</body>
+</html>

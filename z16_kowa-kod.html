@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script type="text/javascript">
+ function okno_zamknij_siejka()
+ {
+ window.close()
+ }
+ </script>
+</head>
+<body>
+ <form>
+ <textarea name="siejka" cols="80" rows="30" readonly>
+<!DOCTYPE html>
+<html>
+<head>
+ </head>
+<body>
+ <script>
+var num1 = prompt("A=");
+var num2 = prompt("B=");
+ a = parseFloat(num1);
+b = parseFloat(num2);
+var w1 = a*a*a;
+var w2 = (a*a)*b*3;
+var w3 = a*(b*b)*3;
+var w4 = b*b*b;
+var wynik = w1+w2+w3+w4; 
+ document.write("("+a +"+"+b+")^3="+a+"^3 &nbsp + &nbsp 3*(("+a+")^2)*("+b+") &nbsp + &nbsp3*("+a+")*(("+b+")^2) &nbsp + &nbsp "+b+"^3 &nbsp = &nbsp"+w1 + "+"+w2+"+"+w3+"+"+w4+"&nbsp=&nbsp"+wynik);
+ </script>
+</body>
+  </html>
+ </textarea>
+</form>
+<input type="button" value="zamknij okno" onclick="okno_zamknij_siejka()"/>
+<script type="text/javascript">
+</script>
+</body>

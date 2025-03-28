@@ -1,0 +1,70 @@
+<A HREF="index.html"> Wróć </A></br>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programowanie Obiektowe - Zadanie</title>
+    <script type="text/javascript">
+        // Konstruktor dla użytkownika
+        function User(email, password, avatarUrl) {
+            this.email = email;
+            this.password = password;
+            this.avatarUrl = avatarUrl;
+        }
+
+        // Konstruktor dla listy użytkowników
+        function UserList() {
+            this.users = [];
+        }
+
+        // Metoda dodawania użytkownika do listy
+        UserList.prototype.addUser = function(user) {
+            this.users.push(user);
+        };
+
+        // Metoda logowania
+        UserList.prototype.login = function(email, password) {
+            for (let user of this.users) {
+                if (user.email === email && user.password === password) {
+                    alert("Zalogowano pomyślnie!");
+                    return true;
+                }
+            }
+            alert("Błędny login lub hasło.");
+            return false;
+        };
+
+        // Funkcja do wyświetlenia wyników
+        function addUser() {
+            var email = prompt("Podaj email:");
+            var password = prompt("Podaj hasło:");
+            var avatarUrl = prompt("Podaj URL awatara:");
+            var newUser = new User(email, password, avatarUrl);
+            userList.addUser(newUser);
+            alert("Użytkownik dodany!");
+        }
+
+        // Funkcja logowania
+        function loginUser() {
+            var email = prompt("Podaj email do logowania:");
+            var password = prompt("Podaj hasło:");
+            userList.login(email, password);
+        }
+
+        // Tworzenie instancji UserList
+        var userList = new UserList();
+        
+        // Dodawanie przykładowych użytkowników
+        var user1 = new User("jan.kowalski@example.com", "1234", "avatar1.png");
+        var user2 = new User("anna.nowak@example.com", "abcd", "avatar2.png");
+        userList.addUser(user1);
+        userList.addUser(user2);
+    </script>
+</head>
+<body>
+    <h1>Programowanie obiektowe - Zadanie</h1>
+    <button onclick="addUser()">Dodaj Użytkownika</button>
+    <button onclick="loginUser()">Zaloguj się</button>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<A HREF="index.html"> Wróć </A></br>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programowanie obiektowe - UserView</title>
+    <style>
+        /* Prosty styl dla elementów */
+        li {
+            list-style-type: none;
+            margin: 10px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script type="text/javascript">
+        // Konstruktor User
+        function User(email, password, avatarUrl) {
+            this.email = email;
+            this.password = password;
+            this.avatarUrl = avatarUrl;
+        }
+
+        // Konstruktor UserView
+        function UserView(user) {
+            this.user = user;
+            this.domElement = document.createElement('li'); // Tworzymy element listy
+            this.domElement.classList.add('user-item'); // Dodajemy klasę do listy
+
+            // Tworzymy element obrazka
+            var avatarImage = document.createElement('img');
+            avatarImage.src = this.user.avatarUrl;
+            avatarImage.alt = "Avatar użytkownika";
+
+            // Tworzymy element linku mailto
+            var emailLink = document.createElement('a');
+            emailLink.href = "mailto:" + this.user.email;
+            emailLink.textContent = this.user.email;
+
+            // Dodajemy obrazek i link do elementu li
+            this.domElement.appendChild(avatarImage);
+            this.domElement.appendChild(emailLink);
+        }
+
+        // Metoda refresh w prototypie UserView
+        UserView.prototype.refresh = function() {
+            // Odświeżamy dane: np. zmiana avatara
+            var avatarImage = this.domElement.querySelector('img');
+            avatarImage.src = this.user.avatarUrl;
+            
+            // Odświeżamy mailto
+            var emailLink = this.domElement.querySelector('a');
+            emailLink.href = "mailto:" + this.user.email;
+            emailLink.textContent = this.user.email;
+        };
+
+        // Tworzenie użytkownika
+        var user1 = new User("jan.kowalski@example.com", "1234", "avatar1.jpg");
+        var user2 = new User("anna.nowak@example.com", "abcd", "avatar2.jpg");
+
+        // Tworzenie widoków użytkowników
+        var userView1 = new UserView(user1);
+        var userView2 = new UserView(user2);
+
+        // Dodawanie użytkowników do strony
+        window.onload = function() {
+            var userList = document.getElementById('userList');
+            userList.appendChild(userView1.domElement);
+            userList.appendChild(userView2.domElement);
+        };
+
+        // Funkcja do zmiany avatara dla przykładu
+        function changeAvatar() {
+            user1.avatarUrl = "newAvatar.jpg"; // Zmieniamy URL avatara
+            userView1.refresh(); // Odświeżamy widok
+        }
+    </script>
+</head>
+<body>
+    <h1>Lista Użytkowników</h1>
+    <ul id="userList"></ul>
+
+    <button onclick="changeAvatar()">Zmień awatar dla Jana Kowalskiego</button>
+</body>
+</html>

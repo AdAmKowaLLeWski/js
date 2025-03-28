@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html>
+ <head> 
+ <title> proste obliczenia</title> 
+ <meta charset="utf-8"> 
+ </head> 
+<body>
+<div style="color:green;font-size:52px;">
+ <script language="JavaScript">
+var D1_kow=prompt("liczba1=","");
+var D2_kow=prompt("liczba2=","");
+var sekundy=86400;
+var roznica;
+ var a=parseFloat( D1_kow);
+ var b=parseFloat(D2_kow);
+ if ( D1_kow> D2_kow)
+ {
+    roznica =  D1_kow - D2_kow;
+ }
+ else 
+ {
+    roznica =D2_kow -  D1_kow;
+ }
+ var odpowiedz = roznica*sekundy;
+ document.write("odpowiedz to "+odpowiedz+" sekund");
+ </script>
+</div>
+</body>
+</html>
